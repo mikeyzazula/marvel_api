@@ -11,7 +11,7 @@ $(document).ready( () =>{
 });
 
 function getComics(searchText){
-	axios.get("http://gateway.marvel.com/v1/public/characters?ts=1&nameStartsWith="+searchText+"&limit=100&apikey="+ KEY+"&hash=" + HASH)
+	axios.get("https://gateway.marvel.com/v1/public/characters?ts=1&nameStartsWith="+searchText+"&limit=100&apikey="+ KEY+"&hash=" + HASH)
 		.then ((response) => {
 			console.log(response);
 			let characters = response.data.data.results;
@@ -46,7 +46,7 @@ function characterSelected(id) {
 
 function getCharacter(){
 	let characterId = sessionStorage.getItem('charId');
-	axios.get("http://gateway.marvel.com/v1/public/characters/"+characterId+"?ts=1&apikey="+ KEY+"&hash=" + HASH)
+	axios.get("https://gateway.marvel.com/v1/public/characters/"+characterId+"?ts=1&apikey="+ KEY+"&hash=" + HASH)
 		.then((response) => {
 			console.log(response);
 			let character = response.data.data.results["0"];
