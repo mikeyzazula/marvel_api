@@ -1,0 +1,17 @@
+#characters img, #character img {
+	width: 100%;
+
+}
+
+
+
+@media(min-width: 970px) {
+	#characters .col-md-3 .well {
+	height: 390px;
+
+	}
+	#characters .col-md-3 img {
+		height: 240px;
+		
+	}
+}
