@@ -10,6 +10,8 @@ $(document).ready( () =>{
 
 });
 
+//Grab initial list of characters
+
 function getComics(searchText){
 	axios.get("https://gateway.marvel.com/v1/public/characters?ts=1&nameStartsWith="+searchText+"&limit=100&apikey="+ KEY+"&hash=" + HASH)
 		.then ((response) => {
