@@ -86,7 +86,7 @@ function getCharacter(){
 						
 						<hr>
 						<a href="${character.urls[1].url}" target="_blank" class="btn btn-primary">Marvel Wiki Page</a>
-						<a href="${character.urls[2].url}" target="_blank" class="btn btn-primary">See Comics Featured In</a>
+						<a href="${character.urls[2].url}" target="_blank" class="btn btn-primary">See More Comics Featured In</a>
 						<a href="index.html" class="btn btn-default">Return Home</a>
 					</div>
 				</div>
