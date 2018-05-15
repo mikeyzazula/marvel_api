@@ -18,19 +18,29 @@ function getComics(searchText){
 			console.log(response);
 			let characters = response.data.data.results;
 			let output = ' ';
-			/*JQ loop, ` ` are for template strings*/
-			$.each(characters,(index, chara) => {
+			if (characters.length == 0){
 				output += `
-					<div class="col-md-3">
-						<div class="well text-center" >
-							<img src="${chara.thumbnail.path + "." + chara.thumbnail.extension}" >
-							<h5>${chara.name}</h5>
-							<a onclick = "characterSelected('${chara.id}')" class="btn btn-primary" href = "#" > Character Details</a>
-						</div>
-					</div>
+					<h1>No Results!</h1>
+
 				`;
-			});
-			$('#characters').html(output);
+				$('#characters').html(output);
+			}
+			else{
+								/*JQ loop, ` ` are for template strings*/
+				$.each(characters,(index, chara) => {
+					output += `
+						<div class="col-md-3">
+							<div class="well text-center" >
+								<img src="${chara.thumbnail.path + "." + chara.thumbnail.extension}" >
+								<h5>${chara.name}</h5>
+								<a onclick = "characterSelected('${chara.id}')" class="btn btn-primary" href = "#" > Character Details</a>
+							</div>
+						</div>
+					`;
+				});
+				$('#characters').html(output);
+			}
+
 
 		})
 
